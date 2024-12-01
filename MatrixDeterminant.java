@@ -1,6 +1,12 @@
 public class MatrixDeterminant {
 
-  
+  /**
+     * Static method to calculate the determinant of a square matrix.
+     *
+     * @param matrix The square matrix as a 2D array.
+     * @return The determinant of the matrix.
+     * @throws IllegalArgumentException If the matrix is not square.
+     */
     public static double determinant(double[][] matrix) {
         int n = matrix.length;
 
@@ -29,7 +35,14 @@ public class MatrixDeterminant {
 
         return determinant;
     }
-
+    /**
+     * Helper method to create a submatrix by removing the specified row and column.
+     *
+     * @param matrix The original matrix.
+     * @param excludeRow The row to exclude.
+     * @param excludeCol The column to exclude.
+     * @return The submatrix with the specified row and column removed.
+     */
   
     private static double[][] subMatrix(double[][] matrix, int excludeRow, int excludeCol) {
         int n = matrix.length;
