@@ -1,4 +1,11 @@
 public class BinarySearch {
+    /**
+     * Static method to perform a binary search on a sorted list.
+     *
+     * @param arr   The sorted array of integers.
+     * @param target The target value to search for.
+     * @return The index of the target value if found, or -1 if not found.
+     */
     public static int binarySearch(int[] arr, int target) {
         int left = 0;
         int right = arr.length - 1;
