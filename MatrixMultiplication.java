@@ -1,4 +1,13 @@
 public class MatrixMultiplication {
+    /**
+     * Static method to multiply two matrices together.
+     *
+     * @param matrixA The first matrix as a 2D array.
+     * @param matrixB The second matrix as a 2D array.
+     * @return The resulting matrix after multiplication.
+     * @throws IllegalArgumentException If the number of columns in matrixA
+     *                                  does not match the number of rows in matrixB.
+     */
     public static double[][] multiply(double[][] matrixA, double[][] matrixB) {
         int rowsA = matrixA.length;
         int colsA = matrixA[0].length;
