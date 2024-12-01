@@ -1,12 +1,36 @@
 public class MatrixMultiplication {
+    public static double[][] multiply(double[][] matrixA, double[][] matrixB) {
+        int rowsA = matrixA.length;
+        int colsA = matrixA[0].length;
+        int rowsB = matrixB.length;
+        int colsB = matrixB[0].length;
+
+        // Check if matrix multiplication is possible
+        if (colsA != rowsB) {
+            throw new IllegalArgumentException("Matrix dimensions are incompatible for multiplication.");
+        }
+
+        // Resultant matrix
+        double[][] result = new double[rowsA][colsB];
+
+        // Matrix multiplication logic
+        for (int i = 0; i < rowsA; i++) {
+            for (int j = 0; j < colsB; j++) {
+                for (int k = 0; k < colsA; k++) {
+                    result[i][j] += matrixA[i][k] * matrixB[k][j];
+                }
+            }
+        }
+        return result;
+    }
     // Test cases for matrix multiplication
     public static void main(String[] args) {
         // Test 1: 2x2 Matrices
-        double[][] matrixA1 = {
+         double[][] matrixA1 = {
             {1, 2},
             {3, 4}
         };
-        double[][] matrixB1 = {
+         double[][] matrixB1 = {
             {5, 6},
             {7, 8}
         };
@@ -16,7 +40,7 @@ public class MatrixMultiplication {
         printMatrix(result1);
 
         // Test 2: 3x2 and 2x3 Matrices
-        double[][] matrixA2 = {
+         double[][] matrixA2 = {
             {1, 2},
             {3, 4},
             {5, 6}
@@ -43,6 +67,14 @@ public class MatrixMultiplication {
             multiply(invalidMatrixA, invalidMatrixB);
         } catch (IllegalArgumentException e) {
             System.out.println("Error: " + e.getMessage());
+        }
+    }
+    public static void printMatrix(double[][] matrix) {
+        for (double[] row : matrix) {
+            for (double value : row) {
+                System.out.print(value + " ");
+            }
+            System.out.println();
         }
     }
 }
